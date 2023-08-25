@@ -1,27 +1,23 @@
-'use strict'
-const express = require('express')
+const express = require('express');
+const app = express();
 
-// Create the express app
-const app = express()
+const operators = ['+', '-', '*', '/']; // aur ops add kryo
 
-// Routes and middleware
-// app.use(/* ... */)
-// app.get(/* ... */)
+const history = [];
 
-// Error handlers
-app.use(function fourOhFourHandler (req, res) {
-  res.status(404).send()
-})
-app.use(function fiveHundredHandler (err, req, res, next) {
-  console.error(err)
-  res.status(500).send()
-})
+app.get('/', (req, res) => {
+  res.send(operators);
+});
+app.get('/history', (req, res) => {
+        // history figure out krna h
+});
+app.get('/:fnumber/:operator/:snumber', (req, res) => {
 
-// Start server
-app.listen(1234, function (err) {
-  if (err) {
-    return console.error(err)
-  }
+});
 
-  console.log('Started at http://localhost:1234')
-})
+function calculate(fnumber, operator, snumber) {
+}
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
