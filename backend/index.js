@@ -1,19 +1,14 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-
 const operators = ['plus', 'minus', 'into', 'by', 'power', 'sqrt', 'log', 'sin', 'cos', 'tan'];
-
 let history = [];
-
-// Load the history from the file if it exists
 if (fs.existsSync('history.json')) {
   const historyData = fs.readFileSync('history.json', 'utf8');
   history = JSON.parse(historyData);
 }
 
 app.get('/', (req, res) => {
-  // Send a list of the available endpoints as HTML.
   res.send(`
   <h1 style="text-align: center;">Welcome to CALBot</h1>
   <h3 style="text-align: center;">Available endpoints</h3>
@@ -88,9 +83,58 @@ app.get('/', (req, res) => {
   `);
 });
 
+app.get('/operators', (req, res) => {
+  const operatorExamples = {
+    plus: '2 + 3',
+    minus: '5 - 2',
+    into: '4 * 6',
+    by: '10 / 2',
+    power: '2 ^ 3',
+    sqrt: '√(16)',
+    log: 'log(100)',
+    sin: 'sin(45)',
+    cos: 'cos(60)',
+    tan: 'tan(30)'
+  };
+
+});
+
 app.get('/history', (req, res) => {
   const recentHistory = history.slice(-20);
-  res.send(recentHistory);
+  res.send(`
+  <h1>History(Latest 20)</h1>
+  <table border="1">
+    <thead>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+      <tr>
+        <th>Question</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${recentHistory.map((operation) => `
+        <tr>
+          <td>${operation.question}</td>
+          <td>${operation.answer}</td>
+        </tr>
+      `)}
+    </tbody>
+  </table>`);
 });
 
 app.get('/:fnumber/:operator/:snumber', (req, res) => {
