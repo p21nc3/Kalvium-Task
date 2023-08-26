@@ -137,38 +137,68 @@ app.get('/history', (req, res) => {
   </table>`);
 });
 
-app.get('/:fnumber/:operator/:snumber', (req, res) => {
-  const fnumber = req.params.fnumber;
-  const operator = req.params.operator;
-  const snumber = req.params.snumber;
-  const answer = calculate(fnumber, operator, snumber);
+app.get('/calculate', (req, res) => {
+  const expression = req.query.expression;
+  const parts = expression.split('/');
+  const answer = calculate(parts);
   history.push({
-    question: `${fnumber} ${operator} ${snumber}`,
+    question: expression,
     answer: answer
   });
+  fs.writeFileSync('history.json', JSON.stringify(history));
   res.send({
-    question: `${fnumber} ${operator} ${snumber}`,
+    question: expression,
     answer: answer
   });
 });
 
-function calculate(fnumber, operator, snumber) {
-  if (!operators.includes(operator)) {
-    throw new Error(`Invalid operator: ${operator}`);
+function calculate(parts) {
+  if (parts.length % 2 !== 1) {
+    throw new Error('Invalid expression');
   }
-  const nums = [Number(fnumber), Number(snumber)];
-  switch (operator) {
-    case 'plus':
-      return nums.reduce((a, b) => a + b);
-    case 'minus':
-      return nums.reduce((a, b) => a - b);
-    case 'into':
-      return nums.reduce((a, b) => a * b);
-    case 'by':
-      return nums[0] / nums[1];
-    default:
+  let answer = Number(parts[0]);
+  for (let i = 1; i < parts.length; i += 2) {
+    const operator = parts[i];
+    const operand = Number(parts[i + 1]);
+    if (!operators.includes(operator)) {
       throw new Error(`Invalid operator: ${operator}`);
+    }
+    switch (operator) {
+      case 'plus':
+        answer += operand;
+        break;
+      case 'minus':
+        answer -= operand;
+        break;
+      case 'into':
+        answer *= operand;
+        break;
+      case 'by':
+        answer /= operand;
+        break;
+      case 'power':
+        answer = Math.pow(answer, operand);
+        break;
+      case 'sqrt':
+        answer = Math.sqrt(answer);
+        break;
+      case 'log':
+        answer = Math.log(answer);
+        break;
+      case 'sin':
+        answer = Math.sin(answer);
+        break;
+      case 'cos':
+        answer = Math.cos(answer);
+        break;
+      case 'tan':
+        answer = Math.tan(answer);
+        break;
+      default:
+        throw new Error(`Invalid operator: ${operator}`);
+    }
   }
+  return answer;
 }
 
 app.listen(3000, () => {
