@@ -1,0 +1,35 @@
+.class-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .class-selection-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .class-select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .mark-attendance-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .mark-attendance-button:hover {
+    background-color: #0056b3;
+  }
+  

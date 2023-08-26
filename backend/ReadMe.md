@@ -11,7 +11,7 @@
   
 ### CALBot (My server)
 
-![](/backend\backend-config.png)
+![](/backend/assets/backend-config.png)
 
 * The Name of my server is "CALBot" 
 * Used Express with Bare Bones Scafold
@@ -42,27 +42,27 @@
 
 ### Available Endpoint ('/')<br>
 
-![available endpoint](/backend/available-endpoint.png)
+![available endpoint](/backend/assets/available-endpoint.png)
 
 ### History Endpoint ('/history')<br>
 
-![](/backend/history.png)
+![](/backend/assets/history.png)
 
 
 ### Mathematical Operations <br>
 
-![](/backend/cal2.png)
+![](/backend/assets/cal2.png)
 
-![](/backend/cal3.png)
+![](/backend/assets/cal3.png)
 
-![](/backend/cal4.png)
+![](/backend/assets/cal4.png)
 
-![](/backend/cal5.png)
+![](/backend/assets/cal5.png)
 
-![](/backend/cal6.png)
+![](/backend/assets/cal6.png)
 
-![](/backend/cal7.png)
+![](/backend/assets/cal7.png)
 
-![](/backend/cal8.png)
+![](/backend/assets/cal8.png)
 
 --------------------------------------------------------------

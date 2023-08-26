@@ -1,0 +1,60 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .dashboard-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .attendance-status {
+    margin-bottom: 20px;
+  }
+  
+  .status-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .status-text {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .class-selection {
+    margin-bottom: 20px;
+  }
+  
+  .selection-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .class-select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .mark-attendance-button,
+  .view-history-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .mark-attendance-button:hover,
+  .view-history-button:hover {
+    background-color: #0056b3;
+  }
+  
