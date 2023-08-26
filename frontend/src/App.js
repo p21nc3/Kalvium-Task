@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './src/components/login';
-import Dashboard from './src/components/dashboard';
+import login from './components/login';
+import dashboard from './components/dashboard';
 import './App.css';
 
 const App = () => {
@@ -9,8 +9,8 @@ const App = () => {
     <Router>
       <div className="app-container">
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/" component={login} />
+          <Route path="/dashboard" component={dashboard} />
         </Switch>
       </div>
     </Router>

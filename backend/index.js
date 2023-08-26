@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const operators = ['+', '-', '*', '/'];
+const operators = ['plus', 'minus', 'into', 'by'];
 
 const history = [];
 app.get('/', (req, res) => {
@@ -34,13 +34,13 @@ function calculate(fnumber, operator, snumber) {
   }
   const nums = [Number(fnumber), Number(snumber)];
   switch (operator) {
-    case '+':
+    case 'plus':
       return nums.reduce((a, b) => a + b);
-    case '-':
+    case 'minus':
       return nums.reduce((a, b) => a - b);
-    case '*':
+    case 'into':
       return nums.reduce((a, b) => a * b);
-    case '/':
+    case 'by':
       return nums[0] / nums[1];
     default:
       throw new Error(`Invalid operator: ${operator}`);

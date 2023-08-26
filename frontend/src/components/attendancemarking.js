@@ -1,5 +1,5 @@
 import React from 'react';
-import './src/styles/attendancemarking.css';
+import './styles/attendancemarking.css';
 
 const AttendanceMarking = () => {
   return (
