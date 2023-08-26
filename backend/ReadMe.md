@@ -11,7 +11,7 @@
   
 ### CALBot (My server)
 
-![Configuration](/backend\backend-config.png)
+![](/backend\backend-config.png)
 
 * The Name of my server is "CALBot" 
 * Used Express with Bare Bones Scafold
