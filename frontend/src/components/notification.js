@@ -1,5 +1,5 @@
 import React from 'react';
-import './src/styles/notification.css';
+import './styles/notification.css';
 
 const Notifications = () => {
   return (
