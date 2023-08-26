@@ -83,21 +83,6 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.get('/operators', (req, res) => {
-  const operatorExamples = {
-    plus: '2 + 3',
-    minus: '5 - 2',
-    into: '4 * 6',
-    by: '10 / 2',
-    power: '2 ^ 3',
-    sqrt: '√(16)',
-    log: 'log(100)',
-    sin: 'sin(45)',
-    cos: 'cos(60)',
-    tan: 'tan(30)'
-  };
-
-});
 
 app.get('/history', (req, res) => {
   const recentHistory = history.slice(-20);
