@@ -4,10 +4,10 @@
 
 * Constraints
 
-  [x] '/' and '/history' endpoint response in HTML
-  [x] Other endpoints response is in JSON
-  [x] Multiple Operators calculation
-  [x] History saved (Even after a server restart)
+  ([x]) '/' and '/history' endpoint response in HTML
+  ([x]) Other endpoints response is in JSON
+  ([x]) Multiple Operators calculation
+  ([x]) History saved (Even after a server restart)
   
 ### CalBot (My server)
 
