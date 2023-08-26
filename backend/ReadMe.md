@@ -14,14 +14,14 @@
 ![](/backend/assets/backend-config.png)
 
 * The Name of my server is "CALBot" 
-* Used Express with Bare Bones Scafold
+* Used Express with Bare Bones Scaffold
 * Tools/Softwares used: VScode, Insomnia(API) and GitHub(version control)
-* For input '/' can't be used for expression seperator directly in the URL path, so approached to get the input as a seperate expression.
+* For input '/' can't be used for expression seperator directly in the URL path, so to get the input as a seperate expression i used the below format
 
     **http://localhost:3000/calculate?expression=**
 
 * Here calculate is the function performing the calculation and expression will handle the numbers and operators.
-* To save the history even after the server restart, can be done by just having a database connection with this program. But to make more simple i have approached a common method of saving the history in file and whenever the server gets the history request it response with the recent 20 operations from the file. 
+* To save the history even after the server restart, this can be done by configuring a database connection with this program. But to make more simple i have approached a common method of saving the history in file and whenever the server gets the history request it response with the recent 20 operations from the file. 
 
 ### How to run the CalBot
 
