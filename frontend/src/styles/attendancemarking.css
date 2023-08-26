@@ -1,0 +1,37 @@
+.attendance-marking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .attendance-marking-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .attendance-options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .attendance-option {
+    margin-bottom: 10px;
+  }
+  
+  .submit-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
